@@ -10,6 +10,17 @@ export default function FairytaleTemplate() {
     seconds: 0
   });
 
+  // Photo gallery state
+  const photos = [
+    '/assets/images/foto1.jpg',
+    '/assets/images/mainfoto.jpg', 
+    '/assets/images/foto2.jpg',
+    '/assets/images/foto3.jpg',
+    '/assets/images/foto4.jpg'
+  ];
+  
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+
   // Countdown timer
   useEffect(() => {
     const targetDate = new Date('2025-03-15T08:00:00');
@@ -30,6 +41,17 @@ export default function FairytaleTemplate() {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Auto-rotate photos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhotoIndex((prevIndex) => 
+        prevIndex === photos.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // Change photo every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [photos.length]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 relative overflow-x-hidden">
@@ -566,27 +588,64 @@ export default function FairytaleTemplate() {
         </div>
       </section>
 
+      {/* Flower decoration for Dress Code - positioned outside section */}
+      <div className="relative w-full">
+        <img 
+          src="/assets/images/bungadresss.png" 
+          alt="Flower decoration" 
+          className="absolute left-1/2 transform -translate-x-1/2 w-56 h-14"
+          style={{top: '8px', zIndex: 1}}
+        />
+      </div>
+
       {/* Dress Code Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-rose-50 to-pink-50">
         <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif text-rose-800 mb-2">Dress Code</h2>
-            <p className="text-rose-600 text-sm">Coquette Theme</p>
-          </div>
-          
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="p-6 relative" style={{width: '100%', height: '100%', background: '#FBDEF0', borderRadius: '10px', zIndex: 2}}>
+            
+            <div className="text-center mb-8">
+              <h2 style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Dress Code</h2>
+              <p style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Coquette Theme</p>
+            </div>
+            
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="text-center">
+              <div className="text-center bg-white rounded-lg p-4 relative">
                 <div className="w-16 h-16 rounded-full bg-pink-200 mx-auto mb-2"></div>
-                <p className="text-sm text-rose-700">Soft Pink</p>
-              </div>
-              <div className="text-center">
+                <p style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>Soft Pink</p>
+                
+                {/* Bottom left corner decoration - positioned with perfect corner alignment */}
+                <img 
+                  src="/assets/images/kiriwarna.png" 
+                  alt="Left corner decoration" 
+                  className="absolute w-28 h-28"
+                  style={{
+                    bottom: '-28px',
+                    left: '-36px',
+                    zIndex: 10,
+                    pointerEvents: 'none'
+                  }}
+                />
+              </div>  
+              <div className="text-center bg-white rounded-lg p-4 relative">
                 <div className="w-16 h-16 rounded-full bg-rose-300 mx-auto mb-2"></div>
-                <p className="text-sm text-rose-700">Rose</p>
+                <p style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>Rose</p>
+                
+                {/* Bottom right corner decoration - positioned with perfect corner alignment */}
+                <img 
+                  src="/assets/images/kananwarna.png" 
+                  alt="Right corner decoration" 
+                  className="absolute w-28 h-28"
+                  style={{
+                    bottom: '-28px',
+                    right: '-36px',
+                    zIndex: 10,
+                    pointerEvents: 'none'
+                  }}
+                />
               </div>
             </div>
             
-            <p className="text-center text-sm text-rose-600">
+            <p style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', textAlign: 'center'}}>
               We kindly request our guests to avoid wearing white or bright colors
             </p>
           </div>
@@ -596,33 +655,93 @@ export default function FairytaleTemplate() {
       {/* Moments Section */}
       <section className="py-16 px-4">
         <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif text-rose-800 mb-2">Our Moments</h2>
-            <p className="text-rose-600 text-sm">A glimpse of our beautiful journey together</p>
+          <div className="text-center mb-8 relative">
+            {/* Left decoration */}
+            <img 
+              src="/assets/images/kiriourmoment.png" 
+              alt="Left decoration" 
+              className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-24 h-24"
+            />
+            
+            {/* Right decoration */}
+            <img 
+              src="/assets/images/kananourmoment.png" 
+              alt="Right decoration" 
+              className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-24 h-24"
+            />
+            
+            <h2 className="mb-0" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Our Moments</h2>
+            <p className="text-sm" style={{color: '#CD3FAA', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>A glimpse of our beautiful journey together</p>
           </div>
           
           <div className="mb-8">
-            <div className="w-full h-64 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-gray-500">
-              Main Photo
+            {/* Main Photo with fade transition */}
+            <div className="w-full h-64 rounded-lg mb-4 overflow-hidden relative">
+              {photos.map((photo, index) => (
+                <img 
+                  key={index}
+                  src={photo} 
+                  alt={`Our special moments ${index + 1}`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    index === currentPhotoIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              ))}
+              
+              {/* Photo indicator dots */}
+              <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {photos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentPhotoIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentPhotoIndex 
+                        ? 'bg-white scale-125' 
+                        : 'bg-white/50 hover:bg-white/75'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
             
-            <div className="grid grid-cols-4 gap-2">
-              {[1,2,3,4,5,6,7,8].map((i) => (
-                <div key={i} className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-xs">
-                  {i}
-                </div>
-              ))}
+            {/* Horizontal scrollable thumbnail gallery */}
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex space-x-2 pb-2">
+                {photos.map((photo, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentPhotoIndex(index)}
+                    className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden transition-all duration-300 ${
+                      index === currentPhotoIndex 
+                        ? 'ring-2 ring-pink-400 scale-105' 
+                        : 'hover:ring-2 hover:ring-pink-200'
+                    }`}
+                  >
+                    <img 
+                      src={photo} 
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
           
-          <div className="bg-white rounded-lg p-6 shadow-md text-center">
-            <h3 className="text-xl font-serif text-rose-800 mb-2">Share Your Moments</h3>
-            <p className="text-sm text-rose-600 mb-4">Tag us in your photos and videos from our special day using</p>
+          <div className="rounded-lg p-6 text-center" style={{background: '#FBDEF0'}}>
+            <h3 className="mb-2" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Share Your Moments</h3>
+            <p className="mb-4" style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Tag us in your photos and videos from our special day using</p>
             
-            <button className="bg-rose-500 text-white px-6 py-3 rounded-lg flex items-center mx-auto">
-              <span className="mr-2">#WeddingMempelai2025</span>
-              <span>📋</span>
-            </button>
+            <div style={{width: '100%', height: '100%', padding: '10px', background: 'white', borderRadius: '10px', outline: '1px #9A4C86 solid', outlineOffset: '-1px', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'inline-flex'}}>
+              <div style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Consolas', fontWeight: 400, wordWrap: 'break-word'}}>#WeddingMempelai2025</div>
+              <div style={{padding: '4px', background: 'white', borderRadius: '5px', outline: '1px #9A4C86 solid', outlineOffset: '-1px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <img 
+                  src="/assets/images/copyy.svg" 
+                  alt="Copy" 
+                  className="w-4 h-4"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
