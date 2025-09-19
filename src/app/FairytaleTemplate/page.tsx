@@ -749,59 +749,125 @@ export default function FairytaleTemplate() {
       {/* RSVP Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-pink-50 to-rose-50">
         <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif text-rose-800 mb-2">RSVP</h2>
-            <p className="text-rose-600 text-sm">Please confirm your attendance</p>
+          <div className="text-center mb-8 relative">
+            {/* Left decoration */}
+            <img 
+              src="/assets/images/pitakiri.png" 
+              alt="Left ribbon decoration" 
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
+            />
+            
+            {/* Right decoration */}
+            <img 
+              src="/assets/images/pitakanan.png" 
+              alt="Right ribbon decoration" 
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
+            />
+            
+            <h2 className="mb-2" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>RSVP</h2>
+            <p style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Please confirm your attendance</p>
           </div>
           
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="bg-white rounded-lg p-6" style={{border: '2px solid #F042C5'}}>
             <form className="space-y-6">
               <div>
-                <label className="block text-rose-700 text-sm font-medium mb-2">Nama Lengkap</label>
-                <input 
-                  type="text" 
-                  placeholder="Alif & partner"
-                  className="w-full p-3 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
-                />
+                <label className="block mb-2" style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Nama Lengkap</label>
+                <div style={{width: '100%', height: '100%', padding: '10px', background: '#FEEAF9', borderRadius: '5px', outline: '1px #D38CC1 solid', outlineOffset: '-1px', justifyContent: 'flex-start', alignItems: 'center', gap: '10px', display: 'inline-flex'}}>
+                  <input 
+                    type="text" 
+                    placeholder="Alif & partner"
+                    className="w-full bg-transparent border-none outline-none"
+                    style={{
+                      textAlign: 'left', 
+                      color: '#000000', 
+                      fontSize: '20px', 
+                      fontFamily: 'Times New Roman', 
+                      fontWeight: 400, 
+                      wordWrap: 'break-word'
+                    }}
+                  />
+                  <style jsx>{`
+                    input::placeholder {
+                      color: #F39FDD !important;
+                      font-size: 20px;
+                      font-family: Times New Roman;
+                      font-weight: 400;
+                    }
+                  `}</style>
+                </div>
               </div>
               
               <div>
-                <label className="block text-rose-700 text-sm font-medium mb-2">Konfirmasi Kehadiran</label>
-                <div className="space-y-2">
-                  <label className="flex items-center">
-                    <input type="radio" name="attendance" className="mr-2" />
-                    <span className="text-rose-700">Hadir</span>
+                <label className="block mb-2" style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Konfirmasi Kehadiran</label>
+                <div className="flex space-x-6">
+                  <label className="flex items-center cursor-pointer">
+                    <div className="mr-2 w-4 h-4 relative overflow-hidden rounded-full">
+                      <div style={{width: '13.33px', height: '13.33px', left: '1.33px', top: '1.33px', position: 'absolute', outline: '1.50px #9A4C86 solid', outlineOffset: '-0.75px', borderRadius: '50%'}}></div>
+                      <input type="radio" name="attendance" className="absolute opacity-0 w-full h-full peer" />
+                      <div className="peer-checked:block hidden" style={{width: '8px', height: '8px', left: '4px', top: '4px', position: 'absolute', background: '#F042C5', borderRadius: '50%'}}></div>
+                    </div>
+                    <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Hadir</span>
                   </label>
-                  <label className="flex items-center">
-                    <input type="radio" name="attendance" className="mr-2" />
-                    <span className="text-rose-700">Tidak Hadir</span>
+                  <label className="flex items-center cursor-pointer">
+                    <div className="mr-2 w-4 h-4 relative overflow-hidden rounded-full">
+                      <div style={{width: '13.33px', height: '13.33px', left: '1.33px', top: '1.33px', position: 'absolute', outline: '1.50px #9A4C86 solid', outlineOffset: '-0.75px', borderRadius: '50%'}}></div>
+                      <input type="radio" name="attendance" className="absolute opacity-0 w-full h-full peer" />
+                      <div className="peer-checked:block hidden" style={{width: '8px', height: '8px', left: '4px', top: '4px', position: 'absolute', background: '#F042C5', borderRadius: '50%'}}></div>
+                    </div>
+                    <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Tidak Hadir</span>
                   </label>
                 </div>
               </div>
               
               <div>
-                <label className="block text-rose-700 text-sm font-medium mb-2">Jumlah tamu</label>
-                <select className="w-full p-3 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400">
-                  <option>1 orang</option>
-                  <option>2 orang</option>
-                  <option>3 orang</option>
-                  <option>4 orang</option>
-                </select>
+                <label className="block mb-2" style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Jumlah tamu</label>
+                <div style={{width: '100%', height: '100%', padding: '10px', background: '#FEEAF9', borderRadius: '5px', outline: '1px #D38CC1 solid', outlineOffset: '-1px', justifyContent: 'flex-start', alignItems: 'center', gap: '10px', display: 'inline-flex'}}>
+                  <select 
+                    className="w-full bg-transparent border-none outline-none" 
+                    style={{textAlign: 'left', color: '#000000', fontSize: '20px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}
+                  >
+                    <option style={{background: '#FEEAF9', color: '#F39FDD'}}>1 orang</option>
+                    <option style={{background: '#FEEAF9', color: '#F39FDD'}}>2 orang</option>
+                    <option style={{background: '#FEEAF9', color: '#F39FDD'}}>3 orang</option>
+                    <option style={{background: '#FEEAF9', color: '#F39FDD'}}>4 orang</option>
+                  </select>
+                </div>
               </div>
               
               <div>
-                <label className="block text-rose-700 text-sm font-medium mb-2">Pesan untuk Mempelai (Opsional)</label>
-                <textarea 
-                  placeholder="Tulis Pesan anda..."
-                  rows={4}
-                  className="w-full p-3 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
-                ></textarea>
+                <label className="block mb-2" style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Pesan untuk Mempelai (Opsional)</label>
+                <div style={{width: '100%', height: '100%', padding: '10px', background: '#FEEAF9', borderRadius: '5px', outline: '1px #D38CC1 solid', outlineOffset: '-1px', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '10px', display: 'inline-flex'}}>
+                  <textarea 
+                    placeholder="Tulis Pesan anda..."
+                    rows={4}
+                    className="w-full bg-transparent border-none outline-none resize-none"
+                    style={{
+                      color: '#000000', 
+                      fontSize: '20px', 
+                      fontFamily: 'Times New Roman', 
+                      fontWeight: 400, 
+                      wordWrap: 'break-word'
+                    }}
+                  ></textarea>
+                  <style jsx>{`
+                    textarea::placeholder {
+                      color: #F39FDD !important;
+                      font-size: 20px;
+                      font-family: Times New Roman;
+                      font-weight: 400;
+                    }
+                  `}</style>
+                </div>
               </div>
               
-              <button className="w-full bg-rose-500 text-white py-3 rounded-lg flex items-center justify-center">
-                <span className="mr-2">📨</span>
-                Kirim RSVP
-              </button>
+              <div style={{width: '100%', height: '100%', padding: '10px', background: '#FF3EA0', borderRadius: '10px', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'inline-flex', cursor: 'pointer'}}>
+                <img 
+                  src="/assets/images/telegram.png" 
+                  alt="Send" 
+                  className="w-4 h-4"
+                />
+                <div style={{textAlign: 'center', color: 'white', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Kirim RSVP</div>
+              </div>
             </form>
           </div>
         </div>
