@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function FairytaleTemplate() {
   const [countdown, setCountdown] = useState({
@@ -9,6 +10,35 @@ export default function FairytaleTemplate() {
     minutes: 0,
     seconds: 0
   });
+
+  const [activeGiftTab, setActiveGiftTab] = useState('digital');
+
+  const placeholderStyle = `
+    .custom-placeholder::placeholder {
+      color: #F39FDD !important;
+      font-size: 20px !important;
+      font-family: 'Times New Roman' !important;
+      font-weight: 400 !important;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #D9D9D9;
+      border-radius: 10px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #F042C5;
+      border-radius: 10px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #E03BB0;
+    }
+  `;
 
   // Photo gallery state
   const photos = [
@@ -53,8 +83,35 @@ export default function FairytaleTemplate() {
     return () => clearInterval(interval);
   }, [photos.length]);
 
+  // Wedding Registry slider items
+  const registryItems = [
+    {
+      name: 'Kotak Kado',
+      img: '/assets/images/kadokotak.png',
+    },
+    {
+      name: 'Vas Bunga Hias',
+      img: '/assets/images/vasbunga.png',
+    },
+    {
+      name: 'Selimut',
+      img: '/assets/images/selimut.png',
+    },
+  ];
+
+  const [registryIndex, setRegistryIndex] = useState(0);
+
+  const handleRegistryPrev = () => {
+    setRegistryIndex((prev) => (prev === 0 ? registryItems.length - 1 : prev - 1));
+  };
+  const handleRegistryNext = () => {
+    setRegistryIndex((prev) => (prev === registryItems.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 relative overflow-x-hidden">
+    <>
+      <style dangerouslySetInnerHTML={{ __html: placeholderStyle }} />
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 relative overflow-x-hidden">
       
       {/* Opening Cover Section */}
       <section 
@@ -600,7 +657,7 @@ export default function FairytaleTemplate() {
 
       {/* Dress Code Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-rose-50 to-pink-50">
-        <div className="max-w-md mx-auto">
+  <div className="max-w-md mx-auto" style={{position: 'relative'}}>
           <div className="p-6 relative" style={{width: '100%', height: '100%', background: '#FBDEF0', borderRadius: '10px', zIndex: 2}}>
             
             <div className="text-center mb-8">
@@ -876,68 +933,161 @@ export default function FairytaleTemplate() {
       {/* Wedding Wishes Section */}
       <section className="py-16 px-4">
         <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif text-rose-800 mb-2">Wedding Wishes</h2>
-            <p className="text-rose-600 text-sm">Send your love and best wishes</p>
+          <div className="text-center mb-8 relative">
+            {/* Left star decoration */}
+            <img 
+              src="/assets/images/bintangkiri.png" 
+              alt="Left star decoration" 
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 w-12 h-20"
+            />
+            
+            {/* Right star decoration */}
+            <img 
+              src="/assets/images/bintangkanan.png" 
+              alt="Right star decoration" 
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 w-12 h-20"
+            />
+            
+            <h2 className="mb-2" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Wedding Wishes</h2>
+            <p style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Send your love and best wishes</p>
           </div>
           
           {/* Send Wishes Form */}
-          <div className="bg-white rounded-lg p-6 shadow-md mb-8">
+          <div className="bg-white rounded-lg p-6 shadow-md mb-8 border-2 border-pink-300">
             <div className="flex items-center mb-4">
-              <span className="text-rose-500 mr-2">💕</span>
-              <h3 className="text-lg font-medium text-rose-800">Kirim Ucapan</h3>
+              <Image src="/assets/images/Heart.svg" alt="Heart" width={20} height={20} className="mr-2" />
+              <h3 style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Kirim Ucapan</h3>
             </div>
             
             <div className="space-y-4">
               <input 
                 type="text"
                 placeholder="Alif & partner"
-                className="w-full p-3 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
+                className="custom-placeholder"
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  background: '#FEEAF9',
+                  borderRadius: '5px',
+                  outline: '1px #D38CC1 solid',
+                  outlineOffset: '-1px',
+                  border: 'none',
+                  color: 'black',
+                  fontSize: '20px',
+                  fontFamily: 'Times New Roman',
+                  fontWeight: 400,
+                  wordWrap: 'break-word'
+                }}
               />
               
               <textarea 
                 placeholder="Tulis ucapan atau doa untuk mempelai..."
                 rows={4}
-                className="w-full p-3 border border-rose-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
+                className="custom-placeholder"
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  background: '#FEEAF9',
+                  borderRadius: '5px',
+                  outline: '1px #D38CC1 solid',
+                  outlineOffset: '-1px',
+                  border: 'none',
+                  color: 'black',
+                  fontSize: '20px',
+                  fontFamily: 'Times New Roman',
+                  fontWeight: 400,
+                  wordWrap: 'break-word',
+                  resize: 'vertical'
+                }}
               ></textarea>
               
-              <button className="w-full bg-rose-500 text-white py-3 rounded-lg flex items-center justify-center">
-                <span className="mr-2">💕</span>
-                Kirim Ucapan
+              <button 
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  background: '#FF3EA0',
+                  borderRadius: '10px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
+                  display: 'flex',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                <Image src="/assets/images/Heart.svg" alt="Heart" width={16} height={16} style={{filter: 'brightness(0) invert(1)'}} />
+                <span style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  fontSize: '16px',
+                  fontFamily: 'Times New Roman',
+                  fontWeight: 400,
+                  wordWrap: 'break-word'
+                }}>Kirim Ucapan</span>
               </button>
             </div>
           </div>
           
           {/* Wishes List */}
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="bg-white rounded-lg p-6 shadow-md border-2 border-pink-300">
             <div className="flex items-center mb-6">
-              <span className="text-rose-500 mr-2">👥</span>
-              <h3 className="text-lg font-medium text-rose-800">Ucapan dari Tamu (3)</h3>
+              <Image src="/assets/images/user.svg" alt="User" width={20} height={20} className="mr-2" />
+              <h3 style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Ucapan dari Tamu (3)</h3>
             </div>
             
-            <div className="space-y-4 max-h-80 overflow-y-auto">
-              <div className="bg-rose-50 p-4 rounded-lg">
+            <div 
+              className="space-y-4 max-h-80 overflow-y-auto custom-scrollbar"
+              style={{
+                scrollbarWidth: 'thin',
+                scrollbarColor: '#F042C5 #D9D9D9'
+              }}
+            >
+              <div 
+                className="p-4"
+                style={{
+                  background: '#F4CFE2',
+                  borderRadius: '10px',
+                  borderLeft: '4px #F042C5 solid',
+                  boxShadow: '4px 4px 8px rgba(240, 66, 197, 0.3)'
+                }}
+              >
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-medium text-rose-800">Sarah & David</h4>
-                  <span className="text-xs text-rose-600">2 hari yang lalu</span>
+                  <h4 style={{color: '#9A4C86', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Sarah & David</h4>
+                  <span style={{color: '#F042C5', fontSize: '12px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>2 hari yang lalu</span>
                 </div>
-                <p className="text-sm text-rose-700">Selamat atas pernikahan kalian! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Bahagia selalu! 💕</p>
+                <p style={{color: '#F042C5', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Selamat atas pernikahan kalian! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Bahagia selalu! 💕</p>
               </div>
               
-              <div className="bg-rose-50 p-4 rounded-lg">
+              <div 
+                className="p-4"
+                style={{
+                  background: '#F4CFE2',
+                  borderRadius: '10px',
+                  borderLeft: '4px #F042C5 solid',
+                  boxShadow: '4px 4px 8px rgba(240, 66, 197, 0.3)'
+                }}
+              >
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-medium text-rose-800">Maya</h4>
-                  <span className="text-xs text-rose-600">1 hari yang lalu</span>
+                  <h4 style={{color: '#9A4C86', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Maya</h4>
+                  <span style={{color: '#F042C5', fontSize: '12px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>1 hari yang lalu</span>
                 </div>
-                <p className="text-sm text-rose-700">Finally! Kalian memang couple goals banget. Semoga langgeng sampai kakek nenek ya! 👰🤵</p>
+                <p style={{color: '#F042C5', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Finally! Kalian memang couple goals banget. Semoga langgeng sampai kakek nenek ya! 👰🤵</p>
               </div>
               
-              <div className="bg-rose-50 p-4 rounded-lg">
+              <div 
+                className="p-4"
+                style={{
+                  background: '#F4CFE2',
+                  borderRadius: '10px',
+                  borderLeft: '4px #F042C5 solid',
+                  boxShadow: '4px 4px 8px rgba(240, 66, 197, 0.3)'
+                }}
+              >
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="font-medium text-rose-800">Ahmad & Sari</h4>
-                  <span className="text-xs text-rose-600">8 jam yang lalu</span>
+                  <h4 style={{color: '#9A4C86', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Ahmad & Sari</h4>
+                  <span style={{color: '#F042C5', fontSize: '12px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>8 jam yang lalu</span>
                 </div>
-                <p className="text-sm text-rose-700">Barakallahu lakuma wa baraka alaikuma wa jama&apos;a bainakuma fi khair. Selamat menempuh hidup baru! 🤲</p>
+                <p style={{color: '#F042C5', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Barakallahu lakuma wa baraka alaikuma wa jama&apos;a bainakuma fi khair. Selamat menempuh hidup baru! 🤲</p>
               </div>
             </div>
           </div>
@@ -948,28 +1098,322 @@ export default function FairytaleTemplate() {
       <section className="py-16 px-4 bg-gradient-to-r from-rose-50 to-pink-50">
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif text-rose-800 mb-2">Wedding Gift</h2>
-            <p className="text-rose-600 text-sm">Your presence is the greatest gift, but if you wish to honor us with something special...</p>
+            <h2 style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}} className="mb-2">Wedding Gift</h2>
+            <p style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Your presence is the greatest gift, but if you wish to honor us with something special...</p>
           </div>
           
-          <div className="bg-white rounded-lg p-6 shadow-md">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🎁</div>
-              <h3 className="text-lg font-medium text-rose-800 mb-4">Digital Wedding Gift</h3>
-              <p className="text-sm text-rose-600 mb-6">
-                If you wish to give us a wedding gift, you can send it via digital transfer
-              </p>
-              
-              <div className="space-y-3">
-                <button className="w-full bg-blue-600 text-white py-3 rounded-lg flex items-center justify-center">
-                  <span className="mr-2">🏦</span>
-                  Bank Transfer
-                </button>
-                
-                <button className="w-full bg-green-600 text-white py-3 rounded-lg flex items-center justify-center">
-                  <span className="mr-2">💳</span>
-                  E-Wallet
-                </button>
+          {/* Star background icon (kanan bawah, behind frame) */}
+          {/* Gift Options Container */}
+          <div style={{width: '100%', height: '100%', position: 'relative', zIndex: 1}}>
+            {/* Star icon inside the frame, absolutely positioned */}
+            <img 
+              src="/assets/images/Groupbintang.png" 
+              alt="Star background" 
+              style={{
+                position: 'absolute',
+                right: '-40px',
+                bottom: '-60px',
+                width: '270px', // reduce width
+                height: '300px', // reduce height
+                maxWidth: 'none',
+                maxHeight: 'none',
+                zIndex: 0,
+                pointerEvents: 'none',
+                opacity: 0.85,
+                userSelect: 'none',
+              }}
+            />
+          {/* Gift Options Container */}
+          {/* ...existing code... (Gift Options Container content remains unchanged) */}
+            {/* Tab Navigation */}
+            <div style={{width: '100%', height: '100%', background: '#F4CFE2', borderRadius: '10px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
+              <button 
+                onClick={() => setActiveGiftTab('digital')}
+                style={{
+                  width: '128px', 
+                  height: '19px', 
+                  padding: '10px', 
+                  background: activeGiftTab === 'digital' ? 'white' : 'transparent', 
+                  borderRadius: '50px', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  gap: '10px', 
+                  display: 'flex',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Digital Transfer</div>
+              </button>
+              <button 
+                onClick={() => setActiveGiftTab('registry')}
+                style={{
+                  width: '127px', 
+                  height: '19px', 
+                  padding: '10px', 
+                  borderRadius: '50px', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  gap: '10px', 
+                  display: 'flex',
+                  background: activeGiftTab === 'registry' ? 'white' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Wedding Registry</div>
+              </button>
+              <button 
+                onClick={() => { console.log('Kirim Kado tab clicked'); setActiveGiftTab('kado'); }}
+                style={{
+                  width: '127px', 
+                  height: '19px', 
+                  padding: '10px', 
+                  borderRadius: '50px', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  gap: '10px', 
+                  display: 'flex',
+                  background: activeGiftTab === 'kado' ? 'white' : 'transparent',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+              >
+                <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Kirim Kado</div>
+              </button>
+            </div>
+            
+            {/* Content Container with smooth transition */}
+            <div style={{width: '100%', height: '294px', position: 'relative', marginTop: '20px'}}>
+              {/* Digital Transfer Tab Content */}
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  transition: 'opacity 0.4s cubic-bezier(0.4,0,0.2,1), visibility 0.4s cubic-bezier(0.4,0,0.2,1)',
+                  opacity: activeGiftTab === 'digital' ? 1 : 0,
+                  visibility: activeGiftTab === 'digital' ? 'visible' : 'hidden',
+                  zIndex: activeGiftTab === 'digital' ? 2 : 1
+                }}
+              >
+                <div style={{width: '100%', height: '294px', background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: '10px', border: '1px #F042C5 solid', position: 'relative', padding: '20px'}}>
+                  {/* Transfer Bank Header */}
+                  <div style={{width: '100%', paddingTop: '5px', paddingBottom: '10px', paddingRight: '10px', justifyContent: 'flex-start', alignItems: 'center', gap: '10px', display: 'flex', marginBottom: '15px'}}>
+                    <img 
+                      src="/assets/images/bankk.svg" 
+                      alt="Bank Icon" 
+                      style={{width: '24px', height: '24px', objectFit: 'contain'}}
+                    />
+                    <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Transfer Bank</div>
+                  </div>
+                  {/* Bank Mandiri */}
+                  <div style={{width: '100%', height: '85px', background: '#F4CFE2', borderRadius: '10px', position: 'relative', marginBottom: '15px', padding: '10px'}}>
+                    {/* Copy Button */}
+                    <div style={{width: '24px', height: '23.64px', padding: '1px', position: 'absolute', right: '10px', top: '10px', background: 'white', overflow: 'hidden', borderRadius: '5px', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'flex'}}>
+                      <img 
+                        src="/assets/images/copy-01.png" 
+                        alt="Copy" 
+                        style={{width: '20px', height: '20px'}}
+                      />
+                    </div>
+                    <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '5px'}}>Bank Mandiri</div>
+                    <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '5px'}}>Alexander W. Thompson</div>
+                    <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>1234567890123</div>
+                  </div>
+                  {/* Bank BCA */}
+                  <div style={{width: '100%', height: '85px', background: '#F4CFE2', borderRadius: '10px', position: 'relative', padding: '10px', marginBottom: '10px'}}>
+                    {/* Copy Button */}
+                    <div style={{width: '24px', height: '23.64px', padding: '1px', position: 'absolute', right: '10px', top: '10px', background: 'white', overflow: 'hidden', borderRadius: '5px', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'flex'}}>
+                      <img 
+                        src="/assets/images/copy-01.png" 
+                        alt="Copy" 
+                        style={{width: '20px', height: '20px'}}
+                      />
+                    </div>
+                    <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '5px'}}>Bank BCA</div>
+                    <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '5px'}}>Isabella G. Martinez</div>
+                    <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>9876543210987</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Wedding Registry Tab Content */}
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  transition: 'opacity 0.4s cubic-bezier(0.4,0,0.2,1), visibility 0.4s cubic-bezier(0.4,0,0.2,1)',
+                  opacity: activeGiftTab === 'registry' ? 1 : 0,
+                  visibility: activeGiftTab === 'registry' ? 'visible' : 'hidden',
+                  zIndex: activeGiftTab === 'registry' ? 2 : 1
+                }}
+              >
+                <div style={{
+                  width: '100%',
+                  height: '294px',
+                  background: 'white',
+                  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                  borderRadius: '10px',
+                  border: '1px #F042C5 solid',
+                  padding: '20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  boxSizing: 'border-box'
+                }}>
+                  {/* Header - left aligned, rest centered */}
+                  <div style={{width: '100%', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', justifyContent: 'flex-start'}}>
+                    <img src="/assets/images/gift.png" alt="Gift Icon" style={{width: '20px', height: '20px', objectFit: 'contain'}} />
+                    <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Gift Recomendation</div>
+                  </div>
+                  {/* Gift Image with Arrows */}
+                  <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', margin: '10px 0'}}>
+                    <button
+                      style={{width: '50px', height: '50px', background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                      onClick={handleRegistryPrev}
+                      aria-label="Sebelumnya"
+                      type="button"
+                    >
+                      <img src="/assets/images/panahkiri.png" alt="Sebelumnya" style={{width: '32px', height: '32px'}} />
+                    </button>
+                    <img
+                      style={{width: '90px', height: '90px', margin: '0 10px', display: 'block'}}
+                      src={registryItems[registryIndex].img}
+                      alt={registryItems[registryIndex].name}
+                    />
+                    <button
+                      style={{width: '50px', height: '50px', background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                      onClick={handleRegistryNext}
+                      aria-label="Selanjutnya"
+                      type="button"
+                    >
+                      <img src="/assets/images/panahkanan.png" alt="Selanjutnya" style={{width: '32px', height: '32px'}} />
+                    </button>
+                  </div>
+                  {/* Item Name */}
+                  <div style={{width: '100%', textAlign: 'center', color: '#9A4C86', fontSize: '20px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '10px'}}>
+                    {registryItems[registryIndex].name}
+                  </div>
+                  {/* Description */}
+                  <div style={{width: '100%', textAlign: 'center', color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginTop: '10px'}}>
+                    We've created a special wishlist of items that would help us start our new journey together.
+                  </div>
+                </div>
+              </div>
+
+              {/* Kirim Kado Tab Content */}
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'opacity 0.4s cubic-bezier(0.4,0,0.2,1), visibility 0.4s cubic-bezier(0.4,0,0.2,1)',
+                  opacity: activeGiftTab === 'kado' ? 1 : 0,
+                  visibility: activeGiftTab === 'kado' ? 'visible' : 'hidden',
+                  zIndex: activeGiftTab === 'kado' ? 2 : 1
+                }}
+              >
+                {activeGiftTab === 'kado' && (
+                  <div style={{
+                    width: '100%',
+                    height: '320px',
+                    background: 'white',
+                    borderRadius: '10px',
+                    border: '2px #F042C5 solid',
+                    boxShadow: '0px 4px 12px 0px rgba(240, 66, 197, 0.10)',
+                    padding: '0',
+                    marginTop: '28px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative',
+                    boxSizing: 'border-box',
+                  }}>
+                    {/* Header dengan icon dan label */}
+                    <div style={{width: '100%', display: 'flex', alignItems: 'center', gap: '8px', padding: '18px 20px 0 20px'}}>
+                      <img src="/assets/images/lokasi.svg" alt="Alamat Pengiriman Kado" style={{width: '22px', height: '22px'}} />
+                      <span style={{color: '#9A4C86', fontSize: '15px', fontFamily: 'Times New Roman', fontWeight: 600}}>Alamat Pengiriman Kado</span>
+                    </div>
+                    {/* Card pink alamat + catatan di dalamnya */}
+                    <div style={{
+                      width: 'calc(100% - 32px)',
+                      background: '#F9D6F0',
+                      borderRadius: '10px',
+                      margin: '24px 0 0 0',
+                      padding: '28px 20px 32px 20px',
+                      position: 'relative',
+                      boxSizing: 'border-box',
+                      minHeight: '170px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                      justifyContent: 'center',
+                      marginBottom: '18px',
+                    }}>
+                      <div style={{
+                        color: '#9A4C86',
+                        fontSize: '16px',
+                        fontFamily: 'Times New Roman',
+                        fontWeight: 400,
+                        wordWrap: 'break-word',
+                        marginBottom: '6px'
+                      }}>Alamat Penerima:</div>
+                      <div style={{color: '#9A4C86', fontSize: '13px', fontFamily: 'Times New Roman', fontWeight: 400, marginBottom: '6px', whiteSpace: 'pre-line'}}>
+                        <div style={{
+                          color: '#9A4C86',
+                          fontSize: '16px',
+                          fontFamily: 'Times New Roman',
+                          fontWeight: 400,
+                          wordWrap: 'break-word',
+                          lineHeight: 1.4
+                        }}>
+                          <div>Alexander &amp; Isabella Wedding</div>
+                          <div>Jl. Bahagia Selalu No. 789 Kelurahan</div>
+                          <div>Cinta, Kecamatan Kasih Jakarta Selatan 12345</div>
+                          <div style={{fontSize: '15px', marginTop: '2px'}}>Phone: +62-812-3456-7890</div>
+                          {/* Pink separator line */}
+                          <div style={{width: '100%', height: '2px', background: '#F042C5', borderRadius: '1px', margin: '12px 0 8px 0'}}></div>
+                        </div>
+                      </div>
+                      {/* Tombol copy di pojok kanan atas */}
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText('Alexander & Isabella Wedding\nJl. Bahagia Selalu No. 789 Kelurahan Cinta, Kecamatan Kasih Jakarta Selatan 12345\nPhone: +62-812-3456-7890');
+                        }}
+                        style={{
+                          position: 'absolute',
+                          top: '12px',
+                          right: '12px',
+                          background: 'none',
+                          border: 'none',
+                          padding: 0,
+                          cursor: 'pointer',
+                        }}
+                        aria-label="Copy Alamat"
+                      >
+                        <img src="/assets/images/copy-01.png" alt="Copy" style={{width: '22px', height: '22px'}} />
+                      </button>
+                      {/* Catatan pengiriman di dalam pink card */}
+                      <div style={{color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, margin: '10px 0 0 0', textAlign: 'left'}}>
+                        <span style={{fontWeight: 600}}>Catatan:</span> Kado dapat dikirim mulai dari H-7 sampai H+7 acara pernikahan. Mohon cantumkan nama pengirim pada paket.
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -979,12 +1423,45 @@ export default function FairytaleTemplate() {
       {/* Thank You Section */}
       <section className="py-16 px-4">
         <div className="max-w-md mx-auto">
-          <div className="bg-white rounded-lg p-6 shadow-md text-center">
-            <div className="text-4xl mb-4">🙏</div>
-            <h2 className="text-2xl font-serif text-rose-800 mb-4">Terima Kasih</h2>
-            <p className="text-sm text-rose-600 mb-6">
-              Kehadiran Anda di hari bahagia kami adalah hadiah terindah. Namun jika ingin memberikan hadiah, kami akan menerimanya dengan penuh rasa syukur.
-            </p>
+          <div style={{position: 'relative'}}>
+            <div style={{
+              width: '100%',
+              background: '#FBDEF0',
+              borderRadius: '10px',
+              padding: '32px 24px',
+              boxSizing: 'border-box',
+              position: 'relative',
+              zIndex: 0
+            }}>
+              <img src="/assets/images/mah.png" alt="Thank You Icon" style={{width: '72px', height: '72px', objectFit: 'contain', margin: '0 auto 8px auto', display: 'block'}} />
+              <h2 
+                className="mb-2"
+                style={{
+                  color: '#9A4C86',
+                  fontSize: '32px',
+                  fontFamily: 'Times New Roman',
+                  fontWeight: 400,
+                  wordWrap: 'break-word',
+                  textAlign: 'center'
+                }}
+              >
+                Terima Kasih
+              </h2>
+              <p 
+                className="mb-0"
+                style={{
+                  color: '#CD3FAA',
+                  fontSize: '16px',
+                  fontFamily: 'Times New Roman',
+                  fontWeight: 400,
+                  wordWrap: 'break-word',
+                  marginBottom: 0,
+                  textAlign: 'center'
+                }}
+              >
+                Kehadiran Anda di hari bahagia kami adalah hadiah terindah. Namun jika ingin memberikan hadiah, kami akan menerimanya dengan penuh rasa syukur.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -1007,10 +1484,7 @@ export default function FairytaleTemplate() {
             <div className="flex justify-center mb-6">
               <div className="w-48 h-48 bg-gray-200 rounded-lg flex items-center justify-center">
                 <span className="text-gray-500">QR Code</span>
-              </div>
-            </div>
-            
-            <div className="text-center mb-6">
+                  </div>
               <button className="bg-rose-500 text-white px-4 py-2 rounded-lg text-sm flex items-center mx-auto">
                 <span className="mr-2">📱</span>
                 Generate QR Code
@@ -1054,6 +1528,7 @@ export default function FairytaleTemplate() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
