@@ -252,7 +252,7 @@ export default function FairytaleTemplate() {
       </section>
 
       {/* Words of Blessing Section */}
-      <section className="py-16 px-4">
+  <section className="py-16 px-4" style={{ background: '#FBDEF0' }}>
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center mb-2">
@@ -1590,34 +1590,81 @@ export default function FairytaleTemplate() {
         </div>
       </section>
 
-      {/* QR Code Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-pink-50 to-rose-50">
+  {/* QR Code Section */}
+  <section className="py-16 px-4" style={{ background: '#FBDEF0' }}>
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif text-rose-800 mb-2">Guest Check-in</h2>
-            <p className="text-rose-600 text-sm">Scan this QR code when you arrive at the venue</p>
+            <h2 className="mb-2" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Guest Check-in</h2>
+            <p style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Scan this QR code when you arrive at the venue</p>
           </div>
           
-          <div className="bg-white rounded-lg p-6 shadow-md">
+          <div className="bg-white rounded-lg p-6 shadow-md" style={{ border: '2px solid #F042C5' }}>
             <div className="text-center mb-6">
-              <h3 className="text-lg font-medium text-rose-800 mb-2">Welcome,</h3>
-              <p className="text-rose-700 mb-1">Dear Beloved Guest</p>
-              <p className="text-sm text-rose-600">Guest ID: G2025-001</p>
+              <h3 className="mb-2" style={{color: '#9A4C86', fontSize: '24px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Welcome,</h3>
+              <p style={{color: '#CD3FAA', fontSize: '20px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '4px'}}>Dear Beloved Guest</p>
+              <p style={{color: '#CD3FAA', fontSize: '20px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Guest ID: G2025-001</p>
             </div>
             
             <div className="flex justify-center mb-6">
-              <div className="w-48 h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                <span className="text-gray-500">QR Code</span>
-                  </div>
-              <button className="bg-rose-500 text-white px-4 py-2 rounded-lg text-sm flex items-center mx-auto">
-                <span className="mr-2">📱</span>
-                Generate QR Code
-              </button>
+              <div className="relative w-40 h-40 bg-gray-200 rounded-lg flex items-center justify-center overflow-visible">
+                <Image
+                  src="/assets/images/qr-code.png"
+                  alt="QR Code"
+                  width={160}
+                  height={160}
+                  style={{ objectFit: 'contain', width: '100%', height: '100%', position: 'relative', zIndex: 10 }}
+                  priority
+                />
+                {/* Left icon: push further left so it's flush with QR left edge */}
+                <Image
+                  src="/assets/images/kiricode.png"
+                  alt="Left QR decoration"
+                  width={72}
+                  height={72}
+                  style={{
+                    position: 'absolute',
+                    left: '-72px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    objectFit: 'contain',
+                    pointerEvents: 'none',
+                    zIndex: 20
+                  }}
+                  priority
+                />
+                {/* Right icon: push further right so it's flush with QR right edge */}
+                <Image
+                  src="/assets/images/kanancode.png"
+                  alt="Right QR decoration"
+                  width={72}
+                  height={72}
+                  style={{
+                    position: 'absolute',
+                    right: '-72px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    objectFit: 'contain',
+                    pointerEvents: 'none',
+                    zIndex: 20
+                  }}
+                  priority
+                />
+              </div>
             </div>
             
+            {/* Generate QR Code button from Figma - placed below QR image */}
+            <div className="flex justify-center mb-4">
+              <div style={{width: '100%', maxWidth: 220, height: 'auto', padding: 10, background: '#FF3EA0', borderRadius: 10, justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+                <div style={{width: 20, height: 20, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <Image src="/assets/images/qr-code2.png" alt="generate-icon" width={20} height={20} style={{objectFit: 'contain'}} priority />
+                </div>
+                <div style={{textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Generate QR Code</div>
+              </div>
+            </div>
+
             <div className="border-t pt-4">
-              <h4 className="text-center font-medium text-rose-800 mb-2">Tips:</h4>
-              <ul className="text-sm text-rose-600 space-y-1">
+              <h4 className="text-center mb-2" style={{color: '#9A4C86', fontSize: '20px', fontFamily: 'Times New Roman', fontWeight: 700, wordWrap: 'break-word'}}>Tips:</h4>
+              <ul style={{color: '#CD3FAA', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}} className="space-y-1">
                 <li>• Save QR code to your phone</li>
                 <li>• Show to reception team upon arrival</li>
                 <li>• Keep your phone charged</li>
@@ -1627,28 +1674,34 @@ export default function FairytaleTemplate() {
         </div>
       </section>
 
-      {/* Final Thank You */}
-      <section className="py-16 px-4">
+  {/* Final Thank You */}
+  <section className="py-16 px-4" style={{ background: '#FBDEF0' }}>
         <div className="max-w-md mx-auto text-center">
-          <h2 className="text-2xl font-serif text-rose-800 mb-4">Thank You</h2>
-          <p className="text-rose-600 text-sm mb-8">
-            Your presence and wishes mean the world to us. Thank you for being part of our fairytale beginning.
+          <h2 className="mb-4" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Thank You</h2>
+          <p className="mb-8" style={{color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>
+            Your presence and wishes mean the world to us. Thank<br/>thank you for being part of our fairytale beginning.
           </p>
           
           <div className="w-full h-px bg-rose-300 mb-6"></div>
           
           <div className="space-y-2 mb-6">
             <div className="flex items-center justify-center">
-              <span className="text-rose-600 text-sm mr-2">Made with</span>
-              <span className="text-rose-500">💕</span>
-              <span className="text-rose-600 text-sm ml-2">for our special day</span>
+              <span style={{color: '#CD3FAA', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginRight: '8px'}}>Made with</span>
+              <span style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 4px'}}>
+                <Image src="/assets/images/Heart.svg" alt="Heart" width={16} height={16} style={{objectFit: 'contain'}} priority />
+              </span>
+              <span style={{color: '#CD3FAA', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginLeft: '8px'}}>for our special day</span>
             </div>
-            <p className="text-xs text-rose-500">© 2025 Digital Wedding Invitation. Built with Figma Make</p>
+            <p style={{color: '#CD3FAA', fontSize: '14px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>© 2025 Digital Wedding Invitation. Built with Figma Make</p>
           </div>
           
           <div className="flex justify-center space-x-4">
-            <button className="text-green-600 text-2xl">📱</button>
-            <button className="text-pink-600 text-2xl">📷</button>
+            <button style={{background: 'none', border: 'none', padding: 0, cursor: 'pointer'}} aria-label="WhatsApp">
+              <Image src="/assets/images/whatsapp.png" alt="WhatsApp" width={36} height={36} style={{objectFit: 'contain'}} priority />
+            </button>
+            <button style={{background: 'none', border: 'none', padding: 0, cursor: 'pointer'}} aria-label="Instagram">
+              <Image src="/assets/images/instagram.png" alt="Instagram" width={36} height={36} style={{objectFit: 'contain'}} priority />
+            </button>
           </div>
         </div>
       </section>
