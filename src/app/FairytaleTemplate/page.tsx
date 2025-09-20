@@ -111,7 +111,18 @@ export default function FairytaleTemplate() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: placeholderStyle }} />
+      <style dangerouslySetInnerHTML={{ __html: `
+        ${placeholderStyle}
+        @media (max-width: 340px) {
+          .wedding-gift-tab-btn {
+            font-size: 10px !important;
+            padding: 6px 6px !important;
+          }
+          .wedding-gift-tab-content {
+            font-size: 13px !important;
+          }
+        }
+      ` }} />
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 relative overflow-x-hidden">
       
       {/* Opening Cover Section */}
@@ -1213,56 +1224,62 @@ export default function FairytaleTemplate() {
           {/* ...existing code... (Gift Options Container content remains unchanged) */}
             {/* Tab Navigation */}
             <div style={{width: '100%', height: '100%', background: '#F4CFE2', borderRadius: '10px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
-              <button 
+              <button
+                className="wedding-gift-tab-btn"
                 onClick={() => setActiveGiftTab('digital')}
                 style={{
-                  width: '128px', 
-                  height: '19px', 
-                  padding: '10px', 
-                  background: activeGiftTab === 'digital' ? 'white' : 'transparent', 
-                  borderRadius: '50px', 
-                  justifyContent: 'center', 
-                  alignItems: 'center', 
-                  gap: '10px', 
+                  width: '128px',
+                  height: '19px',
+                  padding: '10px',
+                  background: activeGiftTab === 'digital' ? 'white' : 'transparent',
+                  borderRadius: '50px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
                   display: 'flex',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  fontSize: '12px',
                 }}
               >
                 <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Digital Transfer</div>
               </button>
-              <button 
+              <button
+                className="wedding-gift-tab-btn"
                 onClick={() => setActiveGiftTab('registry')}
                 style={{
-                  width: '127px', 
-                  height: '19px', 
-                  padding: '10px', 
-                  borderRadius: '50px', 
-                  justifyContent: 'center', 
-                  alignItems: 'center', 
-                  gap: '10px', 
+                  width: '127px',
+                  height: '19px',
+                  padding: '10px',
+                  borderRadius: '50px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
                   display: 'flex',
                   background: activeGiftTab === 'registry' ? 'white' : 'transparent',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  fontSize: '12px',
                 }}
               >
                 <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Wedding Registry</div>
               </button>
-              <button 
+              <button
+                className="wedding-gift-tab-btn"
                 onClick={() => { console.log('Kirim Kado tab clicked'); setActiveGiftTab('kado'); }}
                 style={{
-                  width: '127px', 
-                  height: '19px', 
-                  padding: '10px', 
-                  borderRadius: '50px', 
-                  justifyContent: 'center', 
-                  alignItems: 'center', 
-                  gap: '10px', 
+                  width: '127px',
+                  height: '19px',
+                  padding: '10px',
+                  borderRadius: '50px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '10px',
                   display: 'flex',
                   background: activeGiftTab === 'kado' ? 'white' : 'transparent',
                   border: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  fontSize: '12px',
                 }}
               >
                 <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Kirim Kado</div>
