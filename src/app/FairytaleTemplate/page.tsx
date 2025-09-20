@@ -1,3 +1,4 @@
+// ...existing code...
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -238,16 +239,22 @@ export default function FairytaleTemplate() {
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center mb-2">
-              <img 
+              <Image 
                 src="/assets/images/mahkota.png" 
                 alt="Crown" 
+                width={32} height={32}
                 className="w-8 h-8 mr-3"
+                style={{objectFit: 'contain'}}
+                priority
               />
               <h2 className="text-2xl font-serif text-rose-800">Words of Blessing</h2>
-              <img 
+              <Image 
                 src="/assets/images/mahkota.png" 
                 alt="Crown" 
+                width={32} height={32}
                 className="w-8 h-8 ml-3"
+                style={{objectFit: 'contain'}}
+                priority
               />
             </div>
             <p className="text-rose-600 text-sm" style={{color: '#F042C5', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Sacred verses that guide our royal journey</p>
@@ -255,27 +262,35 @@ export default function FairytaleTemplate() {
           
           <div className="flex items-center justify-center mb-6">
             <div className="flex-1 h-px bg-rose-300"></div>
-            <img 
+            <Image 
               src="/assets/images/bintang.png" 
               alt="Star" 
+              width={32} height={32}
               className="w-8 h-8 mx-4"
+              style={{objectFit: 'contain'}}
+              priority
             />
             <div className="flex-1 h-px bg-rose-300"></div>
           </div>
           
           <div className="bg-white rounded-lg px-6 py-4 shadow-md text-center relative" style={{border: '2px solid #F042C5'}}>
             {/* Top-left flower icon */}
-            <img 
+            <Image 
               src="/assets/images/bungakiri22.png" 
               alt="Flower decoration" 
+              width={64} height={64}
               className="absolute -top-2 -left-2 w-16 h-16"
+              style={{objectFit: 'contain'}}
+              priority
             />
-            
             {/* Bottom-right flower icon - larger size */}
-            <img 
+            <Image 
               src="/assets/images/bungavariasi.png" 
               alt="Flower decoration" 
+              width={64} height={64}
               className="absolute -bottom-2 -right-2 w-16 h-16"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             <div className="mb-3 text-rose-800 leading-relaxed" style={{fontFamily: 'serif', fontSize: '14px'}}>
@@ -296,16 +311,22 @@ export default function FairytaleTemplate() {
         <div className="max-w-md mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-2">
-              <img 
+              <Image 
                 src="/assets/images/burungkiri.png" 
                 alt="Bird decoration" 
+                width={36} height={36}
                 className="w-9 h-9 mr-2"
+                style={{objectFit: 'contain'}}
+                priority
               />
               <h2 className="text-2xl font-serif text-rose-800">Our Love Story Begins</h2>
-              <img 
+              <Image 
                 src="/assets/images/burungkanan.png" 
                 alt="Bird decoration" 
+                width={36} height={36}
                 className="w-9 h-9 ml-2"
+                style={{objectFit: 'contain'}}
+                priority
               />
             </div>
             <p className="text-sm" style={{color: '#F042C5', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Two hearts, one destiny</p>
@@ -315,10 +336,13 @@ export default function FairytaleTemplate() {
           <div className="mb-16 bg-white rounded-lg p-6 shadow-md" style={{border: '2px solid #F042C5'}}>
             <div className="relative mb-6">
               <div className="w-48 h-48 mx-auto rounded-full relative">
-                <img 
+                <Image 
                   src="/assets/images/cwok.jpg" 
                   alt="Alexander William Thompson"
+                  width={160} height={160}
                   className="w-40 h-40 object-cover rounded-full absolute top-4 left-4"
+                  style={{objectFit: 'cover'}}
+                  priority
                 />
                 <div 
                   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none"
@@ -345,10 +369,13 @@ export default function FairytaleTemplate() {
           <div className="mb-16 bg-white rounded-lg p-6 shadow-md" style={{border: '2px solid #F042C5'}}>
             <div className="relative mb-6">
               <div className="w-48 h-48 mx-auto rounded-full relative">
-                <img 
+                <Image 
                   src="/assets/images/cwek.jpg" 
                   alt="Isabella Grace Martinez"
+                  width={160} height={160}
                   className="w-40 h-40 object-cover rounded-full absolute top-4 left-4"
+                  style={{objectFit: 'cover'}}
+                  priority
                 />
                 <div 
                   className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none"
@@ -383,9 +410,11 @@ export default function FairytaleTemplate() {
           
           {/* Horse icon */}
           <div className="text-center mb-6">
-            <img 
+            <Image 
               src="/assets/images/kuda.png" 
               alt="Horse decoration" 
+              width={80}
+              height={80}
               className="mx-auto"
             />
           </div>
@@ -436,17 +465,22 @@ export default function FairytaleTemplate() {
         </div>
         
         {/* Bottom left flower decoration */}
-        <img 
+        <Image 
           src="/assets/images/bunga23.png" 
           alt="Flower decoration" 
+          width={128} height={128}
           className="absolute -bottom-12 -left-2 w-32 h-32"
+          style={{objectFit: 'contain'}}
+          priority
         />
-        
         {/* Bottom right flower decoration */}
-        <img 
+        <Image 
           src="/assets/images/bunga244.png" 
           alt="Flower decoration" 
+          width={128} height={128}
           className="absolute -bottom-8 -right-2 w-32 h-32"
+          style={{objectFit: 'contain'}}
+          priority
         />
       </section>
 
@@ -454,18 +488,24 @@ export default function FairytaleTemplate() {
       <section className="py-16 px-4">
         <div className="max-w-md mx-auto text-center">
           <div className="flex items-center justify-center mb-2">
-            <img 
+            <Image 
               src="/assets/images/Countdown.png" 
               alt="Countdown decoration" 
+              width={48} height={48}
               className="w-12 h-12 mr-3"
+              style={{objectFit: 'contain'}}
+              priority
             />
             <h2 style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', lineHeight: '1.2'}}>
               Counting Down to<br/>Our Reception
             </h2>
-            <img 
+            <Image 
               src="/assets/images/cd2.png" 
               alt="Countdown decoration" 
+              width={48} height={48}
               className="w-12 h-12 ml-3"
+              style={{objectFit: 'contain'}}
+              priority
             />
           </div>
           <p className="text-sm mb-8" style={{color: '#F042C5', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Until our fairytale begins...</p>
@@ -532,17 +572,23 @@ export default function FairytaleTemplate() {
         <div className="max-w-md mx-auto">
           <div className="text-center mb-12 relative">
             {/* Left decoration */}
-            <img 
+            <Image 
               src="/assets/images/kiriwhere.png" 
               alt="Left decoration" 
+              width={96} height={96}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             {/* Right decoration */}
-            <img 
+            <Image 
               src="/assets/images/kananwhere.png" 
               alt="Right decoration" 
+              width={96} height={96}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             <h2 className="text-3xl font-serif text-rose-800 mb-2">When & Where</h2>
@@ -556,15 +602,15 @@ export default function FairytaleTemplate() {
             
             <div className="space-y-4 mb-6">
               <div className="flex items-center">
-                <img src="/assets/images/tanggal.svg" alt="Date" className="w-5 h-5 mr-3" />
+                <Image src="/assets/images/tanggal.svg" alt="Date" width={20} height={20} className="w-5 h-5 mr-3" style={{objectFit: 'contain'}} priority />
                 <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>Saturday, March 15, 2025</span>
               </div>
               <div className="flex items-center">
-                <img src="/assets/images/jam.svg" alt="Time" className="w-5 h-5 mr-3" />
+                <Image src="/assets/images/jam.svg" alt="Time" width={20} height={20} className="w-5 h-5 mr-3" style={{objectFit: 'contain'}} priority />
                 <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>08:00 AM</span>
               </div>
               <div className="flex items-center">
-                <img src="/assets/images/lokasi.svg" alt="Location" className="w-5 h-5 mr-3" />
+                <Image src="/assets/images/lokasi.svg" alt="Location" width={20} height={20} className="w-5 h-5 mr-3" style={{objectFit: 'contain'}} priority />
                 <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>Masjid Al-Barokah</span>
               </div>
             </div>
@@ -590,7 +636,7 @@ export default function FairytaleTemplate() {
               </div>
               
               <button className="w-full text-white py-2 rounded-lg text-sm flex items-center justify-center bg-white" style={{border: '2px solid #F042C5', color: '#F042C5'}}>
-                <img src="/assets/images/lokasi.svg" alt="Map" className="w-4 h-4 mr-2" />
+                <Image src="/assets/images/lokasi.svg" alt="Map" width={16} height={16} className="w-4 h-4 mr-2" style={{objectFit: 'contain'}} priority />
                 View on Maps
               </button>
             </div>
@@ -603,15 +649,15 @@ export default function FairytaleTemplate() {
             
             <div className="space-y-4 mb-6">
               <div className="flex items-center">
-                <img src="/assets/images/tanggal.svg" alt="Date" className="w-5 h-5 mr-3" />
+                <Image src="/assets/images/tanggal.svg" alt="Date" width={20} height={20} className="w-5 h-5 mr-3" />
                 <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>Saturday, March 15, 2025</span>
               </div>
               <div className="flex items-center">
-                <img src="/assets/images/jam.svg" alt="Time" className="w-5 h-5 mr-3" />
+                <Image src="/assets/images/jam.svg" alt="Time" width={20} height={20} className="w-5 h-5 mr-3" />
                 <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>07:00 PM</span>
               </div>
               <div className="flex items-center">
-                <img src="/assets/images/lokasi.svg" alt="Location" className="w-5 h-5 mr-3" />
+                <Image src="/assets/images/lokasi.svg" alt="Location" width={20} height={20} className="w-5 h-5 mr-3" />
                 <span style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>The Royal Ballroom</span>
               </div>
             </div>
@@ -637,7 +683,7 @@ export default function FairytaleTemplate() {
               </div>
               
               <button className="w-full text-white py-2 rounded-lg text-sm flex items-center justify-center bg-white" style={{border: '2px solid #F042C5', color: '#F042C5'}}>
-                <img src="/assets/images/lokasi.svg" alt="Map" className="w-4 h-4 mr-2" />
+                <Image src="/assets/images/lokasi.svg" alt="Map" width={16} height={16} className="w-4 h-4 mr-2" />
                 View on Maps
               </button>
             </div>
@@ -647,11 +693,13 @@ export default function FairytaleTemplate() {
 
       {/* Flower decoration for Dress Code - positioned outside section */}
       <div className="relative w-full">
-        <img 
+        <Image 
           src="/assets/images/bungadresss.png" 
           alt="Flower decoration" 
+          width={224} height={56}
           className="absolute left-1/2 transform -translate-x-1/2 w-56 h-14"
-          style={{top: '8px', zIndex: 1}}
+          style={{top: '8px', zIndex: 1, objectFit: 'contain'}}
+          priority
         />
       </div>
 
@@ -671,16 +719,19 @@ export default function FairytaleTemplate() {
                 <p style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>Soft Pink</p>
                 
                 {/* Bottom left corner decoration - positioned with perfect corner alignment */}
-                <img 
+                <Image 
                   src="/assets/images/kiriwarna.png" 
                   alt="Left corner decoration" 
+                  width={112} height={112}
                   className="absolute w-28 h-28"
                   style={{
                     bottom: '-28px',
                     left: '-36px',
                     zIndex: 10,
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    objectFit: 'contain'
                   }}
+                  priority
                 />
               </div>  
               <div className="text-center bg-white rounded-lg p-4 relative">
@@ -688,16 +739,19 @@ export default function FairytaleTemplate() {
                 <p style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word'}}>Rose</p>
                 
                 {/* Bottom right corner decoration - positioned with perfect corner alignment */}
-                <img 
+                <Image 
                   src="/assets/images/kananwarna.png" 
                   alt="Right corner decoration" 
+                  width={112} height={112}
                   className="absolute w-28 h-28"
                   style={{
                     bottom: '-28px',
                     right: '-36px',
                     zIndex: 10,
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    objectFit: 'contain'
                   }}
+                  priority
                 />
               </div>
             </div>
@@ -714,17 +768,23 @@ export default function FairytaleTemplate() {
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8 relative">
             {/* Left decoration */}
-            <img 
+            <Image 
               src="/assets/images/kiriourmoment.png" 
               alt="Left decoration" 
+              width={96} height={96}
               className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-24 h-24"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             {/* Right decoration */}
-            <img 
+            <Image 
               src="/assets/images/kananourmoment.png" 
               alt="Right decoration" 
+              width={96} height={96}
               className="absolute -right-4 top-1/2 transform -translate-y-1/2 w-24 h-24"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             <h2 className="mb-0" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Our Moments</h2>
@@ -735,13 +795,16 @@ export default function FairytaleTemplate() {
             {/* Main Photo with fade transition */}
             <div className="w-full h-64 rounded-lg mb-4 overflow-hidden relative">
               {photos.map((photo, index) => (
-                <img 
+                <Image 
                   key={index}
                   src={photo} 
                   alt={`Our special moments ${index + 1}`}
+                  width={400} height={256}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                     index === currentPhotoIndex ? 'opacity-100' : 'opacity-0'
                   }`}
+                  style={{objectFit: 'cover'}}
+                  priority={index === currentPhotoIndex}
                 />
               ))}
               
@@ -774,9 +837,11 @@ export default function FairytaleTemplate() {
                         : 'hover:ring-2 hover:ring-pink-200'
                     }`}
                   >
-                    <img 
+                    <Image 
                       src={photo} 
                       alt={`Thumbnail ${index + 1}`}
+                      width={100}
+                      height={100}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -792,10 +857,13 @@ export default function FairytaleTemplate() {
             <div style={{width: '100%', height: '100%', padding: '10px', background: 'white', borderRadius: '10px', outline: '1px #9A4C86 solid', outlineOffset: '-1px', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'inline-flex'}}>
               <div style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Consolas', fontWeight: 400, wordWrap: 'break-word'}}>#WeddingMempelai2025</div>
               <div style={{padding: '4px', background: 'white', borderRadius: '5px', outline: '1px #9A4C86 solid', outlineOffset: '-1px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <img 
+                <Image 
                   src="/assets/images/copyy.svg" 
                   alt="Copy" 
+                  width={16} height={16}
                   className="w-4 h-4"
+                  style={{objectFit: 'contain'}}
+                  priority
                 />
               </div>
             </div>
@@ -808,17 +876,23 @@ export default function FairytaleTemplate() {
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8 relative">
             {/* Left decoration */}
-            <img 
+            <Image 
               src="/assets/images/pitakiri.png" 
               alt="Left ribbon decoration" 
+              width={96} height={96}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             {/* Right decoration */}
-            <img 
+            <Image 
               src="/assets/images/pitakanan.png" 
               alt="Right ribbon decoration" 
+              width={96} height={96}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             <h2 className="mb-2" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>RSVP</h2>
@@ -918,10 +992,13 @@ export default function FairytaleTemplate() {
               </div>
               
               <div style={{width: '100%', height: '100%', padding: '10px', background: '#FF3EA0', borderRadius: '10px', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'inline-flex', cursor: 'pointer'}}>
-                <img 
+                <Image 
                   src="/assets/images/telegram.png" 
                   alt="Send" 
+                  width={16} height={16}
                   className="w-4 h-4"
+                  style={{objectFit: 'contain'}}
+                  priority
                 />
                 <div style={{textAlign: 'center', color: 'white', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Kirim RSVP</div>
               </div>
@@ -935,17 +1012,23 @@ export default function FairytaleTemplate() {
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8 relative">
             {/* Left star decoration */}
-            <img 
+            <Image 
               src="/assets/images/bintangkiri.png" 
               alt="Left star decoration" 
+              width={48} height={80}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 w-12 h-20"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             {/* Right star decoration */}
-            <img 
+            <Image 
               src="/assets/images/bintangkanan.png" 
               alt="Right star decoration" 
+              width={48} height={80}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 w-12 h-20"
+              style={{objectFit: 'contain'}}
+              priority
             />
             
             <h2 className="mb-2" style={{color: '#9A4C86', fontSize: '32px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Wedding Wishes</h2>
@@ -955,7 +1038,7 @@ export default function FairytaleTemplate() {
           {/* Send Wishes Form */}
           <div className="bg-white rounded-lg p-6 shadow-md mb-8 border-2 border-pink-300">
             <div className="flex items-center mb-4">
-              <Image src="/assets/images/Heart.svg" alt="Heart" width={20} height={20} className="mr-2" />
+              <Image src="/assets/images/Heart.svg" alt="Heart" width={20} height={20} className="mr-2" style={{objectFit: 'contain'}} priority />
               <h3 style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Kirim Ucapan</h3>
             </div>
             
@@ -1015,7 +1098,7 @@ export default function FairytaleTemplate() {
                   cursor: 'pointer'
                 }}
               >
-                <Image src="/assets/images/Heart.svg" alt="Heart" width={16} height={16} style={{filter: 'brightness(0) invert(1)'}} />
+                <Image src="/assets/images/Heart.svg" alt="Heart" width={16} height={16} style={{filter: 'brightness(0) invert(1)', objectFit: 'contain'}} priority />
                 <span style={{
                   textAlign: 'center',
                   color: 'white',
@@ -1031,7 +1114,7 @@ export default function FairytaleTemplate() {
           {/* Wishes List */}
           <div className="bg-white rounded-lg p-6 shadow-md border-2 border-pink-300">
             <div className="flex items-center mb-6">
-              <Image src="/assets/images/user.svg" alt="User" width={20} height={20} className="mr-2" />
+              <Image src="/assets/images/user.svg" alt="User" width={20} height={20} className="mr-2" style={{objectFit: 'contain'}} priority />
               <h3 style={{color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Ucapan dari Tamu (3)</h3>
             </div>
             
@@ -1106,22 +1189,25 @@ export default function FairytaleTemplate() {
           {/* Gift Options Container */}
           <div style={{width: '100%', height: '100%', position: 'relative', zIndex: 1}}>
             {/* Star icon inside the frame, absolutely positioned */}
-            <img 
+            <Image 
               src="/assets/images/Groupbintang.png" 
               alt="Star background" 
+              width={270} height={300}
               style={{
                 position: 'absolute',
                 right: '-40px',
                 bottom: '-60px',
-                width: '270px', // reduce width
-                height: '300px', // reduce height
+                width: '270px',
+                height: '300px',
                 maxWidth: 'none',
                 maxHeight: 'none',
                 zIndex: 0,
                 pointerEvents: 'none',
                 opacity: 0.85,
                 userSelect: 'none',
+                objectFit: 'contain'
               }}
+              priority
             />
           {/* Gift Options Container */}
           {/* ...existing code... (Gift Options Container content remains unchanged) */}
@@ -1202,10 +1288,12 @@ export default function FairytaleTemplate() {
                 <div style={{width: '100%', height: '294px', background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: '10px', border: '1px #F042C5 solid', position: 'relative', padding: '20px'}}>
                   {/* Transfer Bank Header */}
                   <div style={{width: '100%', paddingTop: '5px', paddingBottom: '10px', paddingRight: '10px', justifyContent: 'flex-start', alignItems: 'center', gap: '10px', display: 'flex', marginBottom: '15px'}}>
-                    <img 
+                    <Image 
                       src="/assets/images/bankk.svg" 
                       alt="Bank Icon" 
+                      width={24} height={24}
                       style={{width: '24px', height: '24px', objectFit: 'contain'}}
+                      priority
                     />
                     <div style={{textAlign: 'center', color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Transfer Bank</div>
                   </div>
@@ -1213,10 +1301,12 @@ export default function FairytaleTemplate() {
                   <div style={{width: '100%', height: '85px', background: '#F4CFE2', borderRadius: '10px', position: 'relative', marginBottom: '15px', padding: '10px'}}>
                     {/* Copy Button */}
                     <div style={{width: '24px', height: '23.64px', padding: '1px', position: 'absolute', right: '10px', top: '10px', background: 'white', overflow: 'hidden', borderRadius: '5px', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'flex'}}>
-                      <img 
+                      <Image 
                         src="/assets/images/copy-01.png" 
                         alt="Copy" 
-                        style={{width: '20px', height: '20px'}}
+                        width={20} height={20}
+                        style={{width: '20px', height: '20px', objectFit: 'contain'}}
+                        priority
                       />
                     </div>
                     <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '5px'}}>Bank Mandiri</div>
@@ -1227,10 +1317,12 @@ export default function FairytaleTemplate() {
                   <div style={{width: '100%', height: '85px', background: '#F4CFE2', borderRadius: '10px', position: 'relative', padding: '10px', marginBottom: '10px'}}>
                     {/* Copy Button */}
                     <div style={{width: '24px', height: '23.64px', padding: '1px', position: 'absolute', right: '10px', top: '10px', background: 'white', overflow: 'hidden', borderRadius: '5px', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px', display: 'flex'}}>
-                      <img 
+                      <Image 
                         src="/assets/images/copy-01.png" 
                         alt="Copy" 
-                        style={{width: '20px', height: '20px'}}
+                        width={20} height={20}
+                        style={{width: '20px', height: '20px', objectFit: 'contain'}}
+                        priority
                       />
                     </div>
                     <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '5px'}}>Bank BCA</div>
@@ -1271,7 +1363,7 @@ export default function FairytaleTemplate() {
                 }}>
                   {/* Header - left aligned, rest centered */}
                   <div style={{width: '100%', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', justifyContent: 'flex-start'}}>
-                    <img src="/assets/images/gift.png" alt="Gift Icon" style={{width: '20px', height: '20px', objectFit: 'contain'}} />
+                    <Image src="/assets/images/gift.png" alt="Gift Icon" width={20} height={20} style={{width: '20px', height: '20px', objectFit: 'contain'}} priority />
                     <div style={{textAlign: 'left', color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Gift Recomendation</div>
                   </div>
                   {/* Gift Image with Arrows */}
@@ -1282,12 +1374,14 @@ export default function FairytaleTemplate() {
                       aria-label="Sebelumnya"
                       type="button"
                     >
-                      <img src="/assets/images/panahkiri.png" alt="Sebelumnya" style={{width: '32px', height: '32px'}} />
+                      <Image src="/assets/images/panahkiri.png" alt="Sebelumnya" width={32} height={32} style={{width: '32px', height: '32px', objectFit: 'contain'}} priority />
                     </button>
-                    <img
-                      style={{width: '90px', height: '90px', margin: '0 10px', display: 'block'}}
+                    <Image
+                      style={{width: '90px', height: '90px', margin: '0 10px', display: 'block', objectFit: 'contain'}}
                       src={registryItems[registryIndex].img}
                       alt={registryItems[registryIndex].name}
+                      width={90} height={90}
+                      priority
                     />
                     <button
                       style={{width: '50px', height: '50px', background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
@@ -1295,7 +1389,7 @@ export default function FairytaleTemplate() {
                       aria-label="Selanjutnya"
                       type="button"
                     >
-                      <img src="/assets/images/panahkanan.png" alt="Selanjutnya" style={{width: '32px', height: '32px'}} />
+                      <Image src="/assets/images/panahkanan.png" alt="Selanjutnya" width={32} height={32} style={{width: '32px', height: '32px', objectFit: 'contain'}} priority />
                     </button>
                   </div>
                   {/* Item Name */}
@@ -1304,7 +1398,7 @@ export default function FairytaleTemplate() {
                   </div>
                   {/* Description */}
                   <div style={{width: '100%', textAlign: 'center', color: '#CD3FAA', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginTop: '10px'}}>
-                    We've created a special wishlist of items that would help us start our new journey together.
+                    We&apos;ve created a special wishlist of items that would help us start our new journey together.
                   </div>
                 </div>
               </div>
@@ -1345,7 +1439,7 @@ export default function FairytaleTemplate() {
                   }}>
                     {/* Header dengan icon dan label */}
                     <div style={{width: '100%', display: 'flex', alignItems: 'center', gap: '8px', padding: '18px 20px 0 20px'}}>
-                      <img src="/assets/images/lokasi.svg" alt="Alamat Pengiriman Kado" style={{width: '22px', height: '22px'}} />
+                      <Image src="/assets/images/lokasi.svg" alt="Alamat Pengiriman Kado" width={22} height={22} style={{width: '22px', height: '22px', objectFit: 'contain'}} priority />
                       <span style={{color: '#9A4C86', fontSize: '15px', fontFamily: 'Times New Roman', fontWeight: 600}}>Alamat Pengiriman Kado</span>
                     </div>
                     {/* Card pink alamat + catatan di dalamnya */}
@@ -1405,7 +1499,7 @@ export default function FairytaleTemplate() {
                         }}
                         aria-label="Copy Alamat"
                       >
-                        <img src="/assets/images/copy-01.png" alt="Copy" style={{width: '22px', height: '22px'}} />
+                        <Image src="/assets/images/copy-01.png" alt="Copy" width={22} height={22} style={{width: '22px', height: '22px', objectFit: 'contain'}} priority />
                       </button>
                       {/* Catatan pengiriman di dalam pink card */}
                       <div style={{color: '#9A4C86', fontSize: '12px', fontFamily: 'Times New Roman', fontWeight: 400, margin: '10px 0 0 0', textAlign: 'left'}}>
@@ -1433,7 +1527,14 @@ export default function FairytaleTemplate() {
               position: 'relative',
               zIndex: 0
             }}>
-              <img src="/assets/images/mah.png" alt="Thank You Icon" style={{width: '72px', height: '72px', objectFit: 'contain', margin: '0 auto 8px auto', display: 'block'}} />
+              <Image 
+                src="/assets/images/mah.png" 
+                alt="Thank You Icon" 
+                width={72} 
+                height={72} 
+                style={{objectFit: 'contain', margin: '0 auto 8px auto', display: 'block'}} 
+                priority
+              />
               <h2 
                 className="mb-2"
                 style={{
