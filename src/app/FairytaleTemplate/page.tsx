@@ -177,7 +177,7 @@ export default function FairytaleTemplate() {
               className="absolute inset-0 bg-contain bg-center bg-no-repeat"
               style={{
                 backgroundImage: "url('/assets/images/framenama.png')",
-                backgroundSize: 'contain',
+                backgroundSize: '110% 100%',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat'
               }}
@@ -201,18 +201,18 @@ export default function FairytaleTemplate() {
           <div className="w-32 h-px bg-pink-300 mx-auto mb-3"></div>
           
           {/* Invitation text - with capsule background */}
-          <div className="mb-8 bg-white/70 backdrop-blur-sm rounded-full px-8 py-2 shadow-lg">
-            <p className="text-sm mb-1" style={{fontFamily: 'Times New Roman', color: '#8D2072', fontSize: '20px', fontWeight: 400}}>
-              Dear Dear Beloved Guest,
-            </p>
-            <p className="text-sm" style={{fontFamily: 'Times New Roman', color: '#F042C5', fontSize: '16px', fontWeight: 400}}>
-              We joyfully invite you to celebrate our fairytale beginning
-            </p>
+          <div className="-mt-6 mb-3 bg-white/70 backdrop-blur-sm rounded-full px-6 py-1 shadow-lg">
+              <p className="text-sm mb-1" style={{fontFamily: 'Times New Roman', color: '#8D2072', fontSize: '20px', fontWeight: 400, wordWrap: 'break-word', marginBottom: '4px'}}>
+                Dear Dear Beloved Guest,
+              </p>
+              <p className="text-sm" style={{fontFamily: 'Times New Roman', color: '#F042C5', fontSize: '14px', fontWeight: 400, wordWrap: 'break-word'}}>
+                We joyfully invite you to celebrate our fairytale beginning
+              </p>
           </div>
           
           {/* Open invitation button with exact Figma styling */}
           <div 
-            className="w-full px-2.5 py-2.5 rounded-full cursor-pointer transition-all duration-300 hover:shadow-lg inline-flex justify-center items-center gap-2.5 mb-8"
+            className="mx-auto mt-4 px-4 py-2 rounded-full cursor-pointer transition-all duration-300 hover:shadow-lg inline-flex justify-center items-center gap-2 mb-8"
             style={{
               background: 'linear-gradient(90deg, #DB4A94 0%, #CD2F76 50%, #DC4B95 100%)'
             }}
@@ -229,8 +229,8 @@ export default function FairytaleTemplate() {
             >
               Open Invitation
             </div>
-            <div className="w-5 h-5 bg-yellow-300 rounded-full flex items-center justify-center">
-              <span className="text-xs">⭐</span>
+            <div className="w-5 h-5 rounded-full flex items-center justify-center bg-transparent">
+              <Image src="/assets/images/bintang.png" width={20} height={20} alt="bintang" />
             </div>
           </div>
         </div>
@@ -1601,7 +1601,9 @@ export default function FairytaleTemplate() {
           <div className="bg-white rounded-lg p-6 shadow-md" style={{ border: '2px solid #F042C5' }}>
             <div className="text-center mb-6">
               <h3 className="mb-2" style={{color: '#9A4C86', fontSize: '24px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Welcome,</h3>
-              <p style={{color: '#CD3FAA', fontSize: '20px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word', marginBottom: '4px'}}>Dear Beloved Guest</p>
+              <p className="text-sm mb-1" style={{fontFamily: 'Times New Roman', color: '#8D2072', fontSize: '20px', fontWeight: 400, wordWrap: 'break-word', marginBottom: '4px'}}>
+              Dear Dear Beloved Guest,
+            </p>
               <p style={{color: '#CD3FAA', fontSize: '20px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Guest ID: G2025-001</p>
             </div>
             
