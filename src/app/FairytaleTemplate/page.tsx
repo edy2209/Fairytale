@@ -113,13 +113,19 @@ export default function FairytaleTemplate() {
     <>
       <style dangerouslySetInnerHTML={{ __html: `
         ${placeholderStyle}
-        @media (max-width: 340px) {
+        .wedding-gift-tab-btn {
+          font-size: clamp(9px, 3vw, 12px) !important;
+        }
+        @media (max-width: 400px) {
           .wedding-gift-tab-btn {
             font-size: 10px !important;
-            padding: 6px 6px !important;
+            padding: 6px 4px !important;
           }
-          .wedding-gift-tab-content {
-            font-size: 13px !important;
+        }
+        @media (max-width: 340px) {
+          .wedding-gift-tab-btn {
+            font-size: 9px !important;
+            padding: 5px 2px !important;
           }
         }
       ` }} />
