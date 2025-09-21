@@ -128,6 +128,18 @@ export default function FairytaleTemplate() {
             padding: 5px 2px !important;
           }
         }
+        /* bordercdhd responsive scale: desktop 1.30, mobile 1.43 */
+        .bordercdhd-scale {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transform: scale(1.30);
+        }
+        @media (max-width: 640px) {
+          .bordercdhd-scale {
+            transform: scale(1.43);
+          }
+        }
       ` }} />
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 relative overflow-x-hidden">
       
@@ -259,8 +271,8 @@ export default function FairytaleTemplate() {
               <Image 
                 src="/assets/images/mahkota.png" 
                 alt="Crown" 
-                width={32} height={32}
-                className="w-8 h-8 mr-3"
+                width={48} height={48}
+                className="w-12 h-12 mr-3"
                 style={{objectFit: 'contain'}}
                 priority
               />
@@ -268,8 +280,8 @@ export default function FairytaleTemplate() {
               <Image 
                 src="/assets/images/mahkota.png" 
                 alt="Crown" 
-                width={32} height={32}
-                className="w-8 h-8 ml-3"
+                width={48} height={48}
+                className="w-12 h-12 ml-3"
                 style={{objectFit: 'contain'}}
                 priority
               />
@@ -282,30 +294,30 @@ export default function FairytaleTemplate() {
             <Image 
               src="/assets/images/bintang.png" 
               alt="Star" 
-              width={32} height={32}
-              className="w-8 h-8 mx-4"
+              width={48} height={48}
+              className="w-12 h-12 mx-4"
               style={{objectFit: 'contain'}}
               priority
             />
             <div className="flex-1 h-px bg-rose-300"></div>
           </div>
           
-          <div className="bg-white rounded-lg px-6 py-4 shadow-md text-center relative" style={{border: '2px solid #F042C5'}}>
+          <div className="bg-white rounded-lg px-6 pt-8 pb-6 shadow-md text-center relative" style={{border: '2px solid #F042C5'}}>
             {/* Top-left flower icon */}
             <Image 
-              src="/assets/images/bungakiri22.png" 
+              src="/assets/images/blesinkirihd.png" 
               alt="Flower decoration" 
-              width={64} height={64}
-              className="absolute -top-2 -left-2 w-16 h-16"
+              width={96} height={96}
+              className="absolute -top-6 -left-6 w-24 h-24"
               style={{objectFit: 'contain'}}
               priority
             />
             {/* Bottom-right flower icon - larger size */}
             <Image 
-              src="/assets/images/bungavariasi.png" 
+              src="/assets/images/blesingkananhd.png" 
               alt="Flower decoration" 
-              width={64} height={64}
-              className="absolute -bottom-2 -right-2 w-16 h-16"
+              width={96} height={96}
+              className="absolute -bottom-6 -right-6 w-24 h-24"
               style={{objectFit: 'contain'}}
               priority
             />
@@ -329,19 +341,19 @@ export default function FairytaleTemplate() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-2">
               <Image 
-                src="/assets/images/burungkiri.png" 
+                src="/assets/images/burungkirihd.png" 
                 alt="Bird decoration" 
-                width={36} height={36}
-                className="w-9 h-9 mr-2"
+                width={56} height={56}
+                className="w-14 h-14 mr-2"
                 style={{objectFit: 'contain'}}
                 priority
               />
               <h2 className="text-2xl font-serif text-rose-800">Our Love Story Begins</h2>
               <Image 
-                src="/assets/images/burungkanan.png" 
+                src="/assets/images/burungkananhd.png" 
                 alt="Bird decoration" 
-                width={36} height={36}
-                className="w-9 h-9 ml-2"
+                width={56} height={56}
+                className="w-14 h-14 ml-2"
                 style={{objectFit: 'contain'}}
                 priority
               />
@@ -428,62 +440,145 @@ export default function FairytaleTemplate() {
           {/* Horse icon */}
           <div className="text-center mb-6">
             <Image 
-              src="/assets/images/kuda.png" 
+              src="/assets/images/kudaponihd.png" 
               alt="Horse decoration" 
-              width={80}
-              height={80}
+              width={150}
+              height={150}
               className="mx-auto"
             />
           </div>
           
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 top-0 bottom-0 w-2" style={{background: '#F042C5'}}></div>
-            
-            {/* Timeline items */}
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center relative z-10" style={{background: '#F042C5'}}>
-                </div>
-                <div className="ml-6 bg-white p-4 rounded-lg shadow-md flex-1">
-                  <div className="px-2 py-1 rounded-full inline-block mb-2" style={{color: '#9A4C86', fontSize: '14px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word', background: '#F042C524'}}>
-                    2020
-                  </div>
-                  <h4 className="font-semibold text-rose-800 mb-2">Once Upon a Time</h4>
-                  <p style={{color: '#F042C5', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>We first met at a magical coffee shop where Alex accidentally spilled coffee on Isabella&apos;s fairy tale book. Love at first sight (and spill)! ☕️💕</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center relative z-10" style={{background: '#F042C5'}}>
-                </div>
-                <div className="ml-6 bg-white p-4 rounded-lg shadow-md flex-1">
-                  <div className="px-2 py-1 rounded-full inline-block mb-2" style={{color: '#9A4C86', fontSize: '14px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word', background: '#F042C524'}}>
-                    2021
-                  </div>
-                  <h4 className="font-semibold text-rose-800 mb-2">The First Date</h4>
-                  <p style={{color: '#F042C5', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Our first official date was a romantic picnic under the stars. Alex brought his guitar and serenaded Isabella with her favorite song. 🌟🎵</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center relative z-10" style={{background: '#F042C5'}}>
-                </div>
-                <div className="ml-6 bg-white p-4 rounded-lg shadow-md flex-1">
-                  <div className="px-2 py-1 rounded-full inline-block mb-2" style={{color: '#9A4C86', fontSize: '14px', fontFamily: 'Georgia', fontWeight: 400, wordWrap: 'break-word', background: '#F042C524'}}>
-                    2023
-                  </div>
-                  <h4 className="font-semibold text-rose-800 mb-2">The Proposal</h4>
-                  <p style={{color: '#F042C5', fontSize: '16px', fontFamily: 'Times New Roman', fontWeight: 400, wordWrap: 'break-word'}}>Alex proposed in a beautiful garden filled with pink roses, getting down on one knee with a crown-shaped ring box. She said yes! 👑💍</p>
-                </div>
-              </div>
-            </div>
-          </div>
+  {/* Timeline line */}
+  <div
+    className="absolute left-4 top-0 bottom-0 w-2"
+    style={{ background: "#F042C5" }}
+  ></div>
+
+  {/* Timeline items */}
+  <div className="space-y-8">
+    <div className="flex items-start">
+      {/* Bullet */}
+      <div
+        className="w-8 h-8 rounded-full flex items-center justify-center relative z-10 ml-1" 
+        style={{ background: "#F042C5" }}
+      ></div>
+
+      {/* Content */}
+      <div className="ml-6 bg-white p-4 rounded-lg shadow-md flex-1">
+        <div
+          className="px-2 py-1 rounded-full inline-block mb-2"
+          style={{
+            color: "#9A4C86",
+            fontSize: "14px",
+            fontFamily: "Georgia",
+            fontWeight: 400,
+            wordWrap: "break-word",
+            background: "#F042C524",
+          }}
+        >
+          2020
+        </div>
+        <h4 className="font-semibold text-rose-800 mb-2">Once Upon a Time</h4>
+        <p
+          style={{
+            color: "#F042C5",
+            fontSize: "16px",
+            fontFamily: "Times New Roman",
+            fontWeight: 400,
+            wordWrap: "break-word",
+          }}
+        >
+          We first met at a magical coffee shop where Alex accidentally spilled
+          coffee on Isabella&apos;s fairy tale book. Love at first sight (and
+          spill)! ☕️💕
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-start">
+      {/* Bullet */}
+      <div
+        className="w-8 h-8 rounded-full flex items-center justify-center relative z-10 ml-1"
+        style={{ background: "#F042C5" }}
+      ></div>
+
+      {/* Content */}
+      <div className="ml-6 bg-white p-4 rounded-lg shadow-md flex-1">
+        <div
+          className="px-2 py-1 rounded-full inline-block mb-2"
+          style={{
+            color: "#9A4C86",
+            fontSize: "14px",
+            fontFamily: "Georgia",
+            fontWeight: 400,
+            wordWrap: "break-word",
+            background: "#F042C524",
+          }}
+        >
+          2021
+        </div>
+        <h4 className="font-semibold text-rose-800 mb-2">The First Date</h4>
+        <p
+          style={{
+            color: "#F042C5",
+            fontSize: "16px",
+            fontFamily: "Times New Roman",
+            fontWeight: 400,
+            wordWrap: "break-word",
+          }}
+        >
+          Our first official date was a romantic picnic under the stars. Alex
+          brought his guitar and serenaded Isabella with her favorite song. 🌟🎵
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-start">
+      {/* Bullet */}
+      <div
+        className="w-8 h-8 rounded-full flex items-center justify-center relative z-10 ml-1"
+        style={{ background: "#F042C5" }}
+      ></div>
+
+      {/* Content */}
+      <div className="ml-6 bg-white p-4 rounded-lg shadow-md flex-1">
+        <div
+          className="px-2 py-1 rounded-full inline-block mb-2"
+          style={{
+            color: "#9A4C86",
+            fontSize: "14px",
+            fontFamily: "Georgia",
+            fontWeight: 400,
+            wordWrap: "break-word",
+            background: "#F042C524",
+          }}
+        >
+          2023
+        </div>
+        <h4 className="font-semibold text-rose-800 mb-2">The Proposal</h4>
+        <p
+          style={{
+            color: "#F042C5",
+            fontSize: "16px",
+            fontFamily: "Times New Roman",
+            fontWeight: 400,
+            wordWrap: "break-word",
+          }}
+        >
+          Alex proposed in a beautiful garden filled with pink roses, getting
+          down on one knee with a crown-shaped ring box. She said yes! 👑💍
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
         
         {/* Bottom left flower decoration */}
         <Image 
-          src="/assets/images/bunga23.png" 
+          src="/assets/images/kirihdb.png" 
           alt="Flower decoration" 
           width={128} height={128}
           className="absolute -bottom-12 -left-2 w-32 h-32"
@@ -492,7 +587,7 @@ export default function FairytaleTemplate() {
         />
         {/* Bottom right flower decoration */}
         <Image 
-          src="/assets/images/bunga244.png" 
+          src="/assets/images/kananhdb.png" 
           alt="Flower decoration" 
           width={128} height={128}
           className="absolute -bottom-8 -right-2 w-32 h-32"
@@ -529,54 +624,50 @@ export default function FairytaleTemplate() {
           
           <div className="grid grid-cols-4 gap-4 mb-8">
             <div className="relative">
-              <div className="bg-rose-100 rounded-lg p-4">
+              <div className="bg-white rounded-lg p-4">
                 <div className="text-2xl relative" style={{color: '#8D2072', fontFamily: 'Consolas, Monaco, "Lucida Console", monospace', fontSize: '28px', fontWeight: 400, fontVariantNumeric: 'slashed-zero'}}>{countdown.days.toString().padStart(2, '0')}</div>
                 <div className="text-xs uppercase tracking-wide" style={{color: '#F042C5', fontFamily: 'Times New Roman', fontWeight: 400}}>DAYS</div>
               </div>
               <div 
-                className="absolute inset-0 bg-contain bg-center bg-no-repeat pointer-events-none"
+                className="absolute inset-0 bordercdhd-scale pointer-events-none"
                 style={{
-                  backgroundImage: "url('/assets/images/bordercontdown.png')",
-                  transform: 'scale(1.3)'
+                  backgroundImage: "url('/assets/images/bordercdhd.png')",
                 }}
               ></div>
             </div>
             <div className="relative">
-              <div className="bg-rose-100 rounded-lg p-4">
+              <div className="bg-white rounded-lg p-4">
                 <div className="text-2xl relative" style={{color: '#8D2072', fontFamily: 'Consolas, Monaco, "Lucida Console", monospace', fontSize: '28px', fontWeight: 400, fontVariantNumeric: 'slashed-zero'}}>{countdown.hours.toString().padStart(2, '0')}</div>
                 <div className="text-xs uppercase tracking-wide" style={{color: '#F042C5', fontFamily: 'Times New Roman', fontWeight: 400}}>HOURS</div>
               </div>
               <div 
-                className="absolute inset-0 bg-contain bg-center bg-no-repeat pointer-events-none"
+                className="absolute inset-0 bordercdhd-scale pointer-events-none"
                 style={{
-                  backgroundImage: "url('/assets/images/bordercontdown.png')",
-                  transform: 'scale(1.3)'
+                  backgroundImage: "url('/assets/images/bordercdhd.png')",
                 }}
               ></div>
             </div>
             <div className="relative">
-              <div className="bg-rose-100 rounded-lg p-4">
+              <div className="bg-white rounded-lg p-4">
                 <div className="text-2xl relative" style={{color: '#8D2072', fontFamily: 'Consolas, Monaco, "Lucida Console", monospace', fontSize: '28px', fontWeight: 400, fontVariantNumeric: 'slashed-zero'}}>{countdown.minutes.toString().padStart(2, '0')}</div>
                 <div className="text-xs uppercase tracking-wide" style={{color: '#F042C5', fontFamily: 'Times New Roman', fontWeight: 400}}>MINUTES</div>
               </div>
               <div 
-                className="absolute inset-0 bg-contain bg-center bg-no-repeat pointer-events-none"
+                className="absolute inset-0 bordercdhd-scale pointer-events-none"
                 style={{
-                  backgroundImage: "url('/assets/images/bordercontdown.png')",
-                  transform: 'scale(1.3)'
+                  backgroundImage: "url('/assets/images/bordercdhd.png')",
                 }}
               ></div>
             </div>
             <div className="relative">
-              <div className="bg-rose-100 rounded-lg p-4">
+              <div className="bg-white rounded-lg p-4">
                 <div className="text-2xl relative" style={{color: '#8D2072', fontFamily: 'Consolas, Monaco, "Lucida Console", monospace', fontSize: '28px', fontWeight: 400, fontVariantNumeric: 'slashed-zero'}}>{countdown.seconds.toString().padStart(2, '0')}</div>
                 <div className="text-xs uppercase tracking-wide" style={{color: '#F042C5', fontFamily: 'Times New Roman', fontWeight: 400}}>SECONDS</div>
               </div>
               <div 
-                className="absolute inset-0 bg-contain bg-center bg-no-repeat pointer-events-none"
+                className="absolute inset-0 bordercdhd-scale pointer-events-none"
                 style={{
-                  backgroundImage: "url('/assets/images/bordercontdown.png')",
-                  transform: 'scale(1.3)'
+                  backgroundImage: "url('/assets/images/bordercdhd.png')",
                 }}
               ></div>
             </div>
@@ -711,7 +802,7 @@ export default function FairytaleTemplate() {
       {/* Flower decoration for Dress Code - positioned outside section */}
       <div className="relative w-full">
         <Image 
-          src="/assets/images/bungadresss.png" 
+          src="/assets/images/bungahddress.png" 
           alt="Flower decoration" 
           width={224} height={56}
           className="absolute left-1/2 transform -translate-x-1/2 w-56 h-14"
@@ -737,7 +828,7 @@ export default function FairytaleTemplate() {
                 
                 {/* Bottom left corner decoration - positioned with perfect corner alignment */}
                 <Image 
-                  src="/assets/images/kiriwarna.png" 
+                  src="/assets/images/bungakirihd.png" 
                   alt="Left corner decoration" 
                   width={112} height={112}
                   className="absolute w-28 h-28"
@@ -757,7 +848,7 @@ export default function FairytaleTemplate() {
                 
                 {/* Bottom right corner decoration - positioned with perfect corner alignment */}
                 <Image 
-                  src="/assets/images/kananwarna.png" 
+                  src="/assets/images/bungakananhd.png" 
                   alt="Right corner decoration" 
                   width={112} height={112}
                   className="absolute w-28 h-28"
@@ -894,7 +985,7 @@ export default function FairytaleTemplate() {
           <div className="text-center mb-8 relative">
             {/* Left decoration */}
             <Image 
-              src="/assets/images/pitakiri.png" 
+              src="/assets/images/pitakirihd.png" 
               alt="Left ribbon decoration" 
               width={96} height={96}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
@@ -904,7 +995,7 @@ export default function FairytaleTemplate() {
             
             {/* Right decoration */}
             <Image 
-              src="/assets/images/pitakanan.png" 
+              src="/assets/images/pitakananhd.png" 
               alt="Right ribbon decoration" 
               width={96} height={96}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 w-24 h-24"
@@ -1030,7 +1121,7 @@ export default function FairytaleTemplate() {
           <div className="text-center mb-8 relative">
             {/* Left star decoration */}
             <Image 
-              src="/assets/images/bintangkiri.png" 
+              src="/assets/images/hdwiseskiri.png" 
               alt="Left star decoration" 
               width={48} height={80}
               className="absolute left-2 top-1/2 transform -translate-y-1/2 w-12 h-20"
@@ -1040,7 +1131,7 @@ export default function FairytaleTemplate() {
             
             {/* Right star decoration */}
             <Image 
-              src="/assets/images/bintangkanan.png" 
+              src="/assets/images/hdwiseskanan.png" 
               alt="Right star decoration" 
               width={48} height={80}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 w-12 h-20"
@@ -1619,7 +1710,7 @@ export default function FairytaleTemplate() {
                 />
                 {/* Left icon: push further left so it's flush with QR left edge */}
                 <Image
-                  src="/assets/images/kiricode.png"
+                  src="/assets/images/kiriqrhd.png"
                   alt="Left QR decoration"
                   width={72}
                   height={72}
@@ -1636,7 +1727,7 @@ export default function FairytaleTemplate() {
                 />
                 {/* Right icon: push further right so it's flush with QR right edge */}
                 <Image
-                  src="/assets/images/kanancode.png"
+                  src="/assets/images/kananqrhd.png"
                   alt="Right QR decoration"
                   width={72}
                   height={72}
@@ -1699,10 +1790,10 @@ export default function FairytaleTemplate() {
           
           <div className="flex justify-center space-x-4">
             <button style={{background: 'none', border: 'none', padding: 0, cursor: 'pointer'}} aria-label="WhatsApp">
-              <Image src="/assets/images/whatsapp.png" alt="WhatsApp" width={36} height={36} style={{objectFit: 'contain'}} priority />
+              <Image src="/assets/images/whatsapp2.png" alt="WhatsApp" width={36} height={36} style={{objectFit: 'contain'}} priority />
             </button>
             <button style={{background: 'none', border: 'none', padding: 0, cursor: 'pointer'}} aria-label="Instagram">
-              <Image src="/assets/images/instagram.png" alt="Instagram" width={36} height={36} style={{objectFit: 'contain'}} priority />
+              <Image src="/assets/images/instagram2.png" alt="Instagram" width={36} height={36} style={{objectFit: 'contain'}} priority />
             </button>
           </div>
         </div>
